@@ -1,0 +1,13 @@
+{
+  "itemGroup.techmod": "Example Mod Tab",
+  "block.techmod.example_block": "Example Block",
+  "item.techmod.example_item": "Example Item",
+
+  "techmod.configuration.title": "Tech mod Configs",
+  "techmod.configuration.section.techmod.common.toml": "Tech mod Configs",
+  "techmod.configuration.section.techmod.common.toml.title": "Tech mod Configs",
+  "techmod.configuration.items": "Item List",
+  "techmod.configuration.logDirtBlock": "Log Dirt Block",
+  "techmod.configuration.magicNumberIntroduction": "Magic Number Text",
+  "techmod.configuration.magicNumber": "Magic Number"
+}
