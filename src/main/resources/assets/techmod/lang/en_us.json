@@ -1,3 +1,20 @@
 {
-  "item.techmod.iron_dust": "Iron Dust"
+  "item.techmod.iron_dust": "Iron Dust",
+  "item.techmod.thallium_shard": "Thallium Shard",
+  "item.techmod.chisel": "Chisel",
+  "item.techmod.thallium_apple": "Thallium Apple",
+  "item.techmod.superdense_thallium": "Superdense Thallium",
+
+  "block.techmod.green_block": "Green Block",
+  "block.techmod.thallium_ore": "Thallium Ore",
+  "block.techmod.thallium_block": "Block of Thallium",
+  "block.techmod.deepslate_thallium_ore": "Deepslate Thallium Ore",
+  "block.techmod.magic_block": "Magic Block",
+
+  "creativetab.techmod.techmod_tab": "Tech mod",
+
+  "tooltip.techmod.magic_block.tooltip": "§7This block transforms§r §l§dThallium§r §7into§r §l§bDiamonds§r",
+  "tooltip.techmod.chisel.shift_down": "§7Right-Click on a block that has a bricks variant to transform it and hold Shift + Right-Click to go back§r",
+  "tooltip.techmod.chisel.shift_up": "§7Press§r §lshift§r §7for detail§r",
+  "tooltip.techmod.superdense_thallium": "§7Thallium compacted so densely it can now be used as an excellent§r §4fuel§r §7source§r"
 }

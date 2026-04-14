@@ -1,6 +1,8 @@
 package com.cuchibambo.techmod;
 
-import com.cuchibambo.techmod.item.ModItem;
+import com.cuchibambo.techmod.block.ModBlocks;
+import com.cuchibambo.techmod.item.ModCreativeModeTabs;
+import com.cuchibambo.techmod.item.ModItems;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -35,7 +37,10 @@ public class Techmod {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
-        ModItem.register(modEventBus);
+        ModCreativeModeTabs.register(modEventBus);
+
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -50,9 +55,15 @@ public class Techmod {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(ModItem.IRON_DUST);
-        }
+//        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+//            event.accept(ModItems.IRON_DUST);
+//        }
+//        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+//            event.accept(ModBlocks.GREEN_BLOCK);
+//        }
+//        if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
+//            event.accept(ModBlocks.THALLIUM_ORE);
+//        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
