@@ -26,12 +26,32 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.THALLIUM_ORE);
                         output.accept(ModBlocks.DEEPSLATE_THALLIUM_ORE);
                         output.accept(ModBlocks.THALLIUM_BLOCK);
-                        output.accept(ModItems.IRON_DUST);
-                        output.accept(ModBlocks.GREEN_BLOCK);
+                        output.accept(ModBlocks.THALLIUM_LAMP);
                         output.accept(ModItems.CHISEL);
+                        output.accept(ModItems.THALLIUM_SWORD);
+                        output.accept(ModItems.THALLIUM_PICKAXE);
+                        output.accept(ModItems.THALLIUM_AXE);
+                        output.accept(ModItems.THALLIUM_SHOVEL);
+                        output.accept(ModItems.THALLIUM_HOE);
+                        output.accept(ModItems.THALLIUM_HAMMER);
+                        output.accept(ModItems.THALLIUM_HELMET);
+                        output.accept(ModItems.THALLIUM_CHESTPLATE);
+                        output.accept(ModItems.THALLIUM_LEGGINGS);
+                        output.accept(ModItems.THALLIUM_BOOTS);
                         output.accept(ModBlocks.MAGIC_BLOCK);
                         output.accept(ModItems.THALLIUM_APPLE);
                         output.accept(ModItems.SUPERDENSE_THALLIUM);
+                        output.accept(ModItems.IRON_DUST);
+                        output.accept(ModBlocks.GREEN_BLOCK);
+                        output.accept(ModBlocks.GREEN_BUTTON);
+                        output.accept(ModBlocks.GREEN_DOOR);
+                        output.accept(ModBlocks.GREEN_FENCE);
+                        output.accept(ModBlocks.GREEN_SLAB);
+                        output.accept(ModBlocks.GREEN_STAIRS);
+                        output.accept(ModBlocks.GREEN_FENCE_GATE);
+                        output.accept(ModBlocks.GREEN_PRESSURE_PLATE);
+                        output.accept(ModBlocks.GREEN_WALL);
+                        output.accept(ModBlocks.GREEN_TRAPDOOR);
                     }).build());
 
     public static void register(IEventBus eventBus) {

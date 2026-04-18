@@ -1,5 +1,6 @@
 package com.cuchibambo.techmod.item.custom;
 
+import com.cuchibambo.techmod.component.ModDataComponents;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -66,6 +67,8 @@ public class ChiselItem extends Item {
                             item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
 
                     level.playSound(null, context.getClickedPos(), SoundEvents.GRINDSTONE_USE, SoundSource.BLOCKS);
+
+                    context.getItemInHand().set(ModDataComponents.COORDINATES, context.getClickedPos());
                 }
                 return InteractionResult.SUCCESS;
             }
@@ -78,6 +81,8 @@ public class ChiselItem extends Item {
                             item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
 
                     level.playSound(null, context.getClickedPos(), SoundEvents.GRINDSTONE_USE, SoundSource.BLOCKS);
+
+                    context.getItemInHand().set(ModDataComponents.COORDINATES, context.getClickedPos());
                 }
                 return InteractionResult.SUCCESS;
             }
@@ -91,6 +96,10 @@ public class ChiselItem extends Item {
             tooltipComponents.add(Component.translatable("tooltip.techmod.chisel.shift_down"));
         } else {
             tooltipComponents.add(Component.translatable("tooltip.techmod.chisel.shift_up"));
+        }
+
+        if (stack.get(ModDataComponents.COORDINATES) != null) {
+            tooltipComponents.add(Component.literal("§7Last block changed at: " + stack.get(ModDataComponents.COORDINATES).getX() + ", " + stack.get(ModDataComponents.COORDINATES).getY()+ ", " + stack.get(ModDataComponents.COORDINATES).getZ()));
         }
 
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);

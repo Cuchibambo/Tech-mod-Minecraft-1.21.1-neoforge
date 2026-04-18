@@ -1,10 +1,12 @@
 package com.cuchibambo.techmod.datagen;
 
 import com.cuchibambo.techmod.Techmod;
+import com.cuchibambo.techmod.item.ModItems;
 import com.cuchibambo.techmod.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -18,6 +20,15 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-
+        tag(ItemTags.SWORDS)
+                .add(ModItems.THALLIUM_SWORD.get());
+        tag(ItemTags.AXES)
+                .add(ModItems.THALLIUM_AXE.get());
+        tag(ItemTags.PICKAXES)
+                .add(ModItems.THALLIUM_PICKAXE.get());
+        tag(ItemTags.SHOVELS)
+                .add(ModItems.THALLIUM_SHOVEL.get());
+        tag(ItemTags.HOES)
+                .add(ModItems.THALLIUM_HOE.get());
     }
 }

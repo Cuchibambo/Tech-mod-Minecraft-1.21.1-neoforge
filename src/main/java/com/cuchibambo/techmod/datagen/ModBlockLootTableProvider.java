@@ -20,13 +20,30 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropSelf(ModBlocks.THALLIUM_BLOCK.get());
-        dropSelf(ModBlocks.GREEN_BLOCK.get());
+        dropSelf(ModBlocks.THALLIUM_LAMP.get());
         dropSelf(ModBlocks.MAGIC_BLOCK.get());
 
         add(ModBlocks.THALLIUM_ORE.get(),
                 block -> createOreDrop(ModBlocks.THALLIUM_ORE.get(), ModItems.THALLIUM_SHARD.get()));
         add(ModBlocks.DEEPSLATE_THALLIUM_ORE.get(),
                 block -> createOreDrop(ModBlocks.DEEPSLATE_THALLIUM_ORE.get(), ModItems.THALLIUM_SHARD.get()));
+
+        dropSelf(ModBlocks.GREEN_BLOCK.get());
+        dropSelf(ModBlocks.GREEN_STAIRS.get());
+        dropSelf(ModBlocks.GREEN_BUTTON.get());
+        dropSelf(ModBlocks.GREEN_FENCE.get());
+        dropSelf(ModBlocks.GREEN_FENCE_GATE.get());
+        dropSelf(ModBlocks.GREEN_PRESSURE_PLATE.get());
+        dropSelf(ModBlocks.GREEN_TRAPDOOR.get());
+        dropSelf(ModBlocks.GREEN_WALL.get());
+
+        add(ModBlocks.GREEN_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.GREEN_SLAB.get()));
+
+        add(ModBlocks.GREEN_DOOR.get(),
+                block -> createDoorTable(ModBlocks.GREEN_DOOR.get()));
+
+
     }
 
     @Override

@@ -1,13 +1,9 @@
 package com.cuchibambo.techmod.item;
 
 import com.cuchibambo.techmod.Techmod;
-import com.cuchibambo.techmod.item.custom.ChiselItem;
-import com.cuchibambo.techmod.item.custom.FuelItem;
-import com.cuchibambo.techmod.item.custom.ModFoodProperties;
+import com.cuchibambo.techmod.item.custom.*;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -37,6 +33,46 @@ public class ModItems {
                     super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
                 }
             });
+
+    public static final DeferredItem<SwordItem> THALLIUM_SWORD = ITEMS.register("thallium_sword",
+            () -> new SwordItem(ModToolTiers.THALLIUM, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(ModToolTiers.THALLIUM, 3, -2.4f))));
+
+    public static final DeferredItem<AxeItem> THALLIUM_AXE = ITEMS.register("thallium_axe",
+            () -> new AxeItem(ModToolTiers.THALLIUM, new Item.Properties()
+                    .attributes(AxeItem.createAttributes(ModToolTiers.THALLIUM, 5, -3f))));
+
+    public static final DeferredItem<PickaxeItem> THALLIUM_PICKAXE = ITEMS.register("thallium_pickaxe",
+            () -> new PickaxeItem(ModToolTiers.THALLIUM, new Item.Properties()
+                    .attributes(PickaxeItem.createAttributes(ModToolTiers.THALLIUM, 1, -2.8f))));
+
+    public static final DeferredItem<ShovelItem> THALLIUM_SHOVEL = ITEMS.register("thallium_shovel",
+            () -> new ShovelItem(ModToolTiers.THALLIUM, new Item.Properties()
+                    .attributes(ShovelItem.createAttributes(ModToolTiers.THALLIUM, 1.5f, -3f))));
+
+    public static final DeferredItem<HoeItem> THALLIUM_HOE = ITEMS.register("thallium_hoe",
+            () -> new HoeItem(ModToolTiers.THALLIUM, new Item.Properties()
+                    .attributes(HoeItem.createAttributes(ModToolTiers.THALLIUM, -3, 0f))));
+
+    public static final DeferredItem<HammerItem> THALLIUM_HAMMER = ITEMS.register("thallium_hammer",
+            () -> new HammerItem(ModToolTiers.THALLIUM, new Item.Properties()
+                    .attributes(PickaxeItem.createAttributes(ModToolTiers.THALLIUM, 3, -3f))));
+
+    public static final DeferredItem<ArmorItem> THALLIUM_HELMET = ITEMS.register("thallium_helmet",
+            () -> new ArmorItem(ModArmorMaterials.THALLIUM_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
+                    new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(19))));
+
+    public static final DeferredItem<ArmorItem> THALLIUM_CHESTPLATE = ITEMS.register("thallium_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.THALLIUM_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
+                    new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(19))));
+
+    public static final DeferredItem<ArmorItem> THALLIUM_LEGGINGS = ITEMS.register("thallium_leggings",
+            () -> new ArmorItem(ModArmorMaterials.THALLIUM_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS,
+                    new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(19))));
+
+    public static final DeferredItem<ArmorItem> THALLIUM_BOOTS = ITEMS.register("thallium_boots",
+            () -> new ArmorItem(ModArmorMaterials.THALLIUM_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
+                    new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(19))));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

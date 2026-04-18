@@ -40,14 +40,60 @@ public class ModRecipeProviders extends RecipeProvider implements IConditionBuil
                 .define('B', ModItems.THALLIUM_SHARD.get())
                 .unlockedBy("has_thallium", has(ModItems.THALLIUM_SHARD)).save(recipeOutput);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.GREEN_BLOCK.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.THALLIUM_LAMP.get())
+                .pattern(" B ")
+                .pattern("BAB")
+                .pattern(" B ")
+                .define('A', Items.GLOWSTONE)
+                .define('B', ModItems.THALLIUM_SHARD.get())
+                .unlockedBy("has_thallium", has(ModItems.THALLIUM_SHARD)).save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.THALLIUM_APPLE.get())
+                .pattern("BBB")
+                .pattern("BAB")
+                .pattern("BBB")
+                .define('A', Items.APPLE)
+                .define('B', ModItems.THALLIUM_SHARD.get())
+                .unlockedBy("has_thallium", has(ModItems.THALLIUM_SHARD)).save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.GREEN_BLOCK.get(), 4)
                 .pattern("CBC")
                 .pattern("BAB")
                 .pattern("CBC")
                 .define('A', Items.TORCH)
-                .define('B', Items.GREEN_DYE)
-                .define('C', Items.GREEN_CONCRETE)
-                .unlockedBy("has_green_dye", has(Items.GREEN_DYE)).save(recipeOutput);
+                .define('B', Items.LIME_DYE)
+                .define('C', Items.LIME_CONCRETE)
+                .unlockedBy("has_lime_dye", has(Items.LIME_DYE)).save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.THALLIUM_HAMMER.get(), 1)
+                .pattern("BBB")
+                .pattern("BBB")
+                .pattern(" A ")
+                .define('A', Items.STICK)
+                .define('B', ModItems.THALLIUM_SHARD)
+                .unlockedBy("has_thallium", has(ModItems.THALLIUM_SHARD)).save(recipeOutput);
+
+        stairBuilder(ModBlocks.GREEN_STAIRS.get(), Ingredient.of(ModBlocks.GREEN_BLOCK.asItem())).group("green_block")
+                .unlockedBy("has_lime_dye", has(Items.LIME_DYE)).save(recipeOutput);
+
+        slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.GREEN_SLAB.get(), ModBlocks.GREEN_BLOCK.asItem());
+
+        buttonBuilder(ModBlocks.GREEN_BUTTON.get(), Ingredient.of(ModBlocks.GREEN_BLOCK.asItem())).group("green_block")
+                .unlockedBy("has_lime_dye", has(Items.LIME_DYE)).save(recipeOutput);
+        pressurePlate(recipeOutput, ModBlocks.GREEN_PRESSURE_PLATE.get(), ModBlocks.GREEN_BLOCK.asItem());
+
+        fenceBuilder(ModBlocks.GREEN_FENCE.get(), Ingredient.of(ModBlocks.GREEN_BLOCK.asItem())).group("green_block")
+                .unlockedBy("has_lime_dye", has(Items.LIME_DYE)).save(recipeOutput);
+        fenceGateBuilder(ModBlocks.GREEN_FENCE_GATE.get(), Ingredient.of(ModBlocks.GREEN_BLOCK.asItem())).group("green_block")
+                .unlockedBy("has_lime_dye", has(Items.LIME_DYE)).save(recipeOutput);
+        wall(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.GREEN_WALL.get(), ModBlocks.GREEN_BLOCK.asItem());
+
+        doorBuilder(ModBlocks.GREEN_DOOR.get(), Ingredient.of(ModBlocks.GREEN_BLOCK.asItem())).group("green_block")
+                .unlockedBy("has_lime_dye", has(Items.LIME_DYE)).save(recipeOutput);
+        trapdoorBuilder(ModBlocks.GREEN_TRAPDOOR.get(), Ingredient.of(ModBlocks.GREEN_BLOCK.asItem())).group("green_block")
+                .unlockedBy("has_lime_dye", has(Items.LIME_DYE)).save(recipeOutput);
+
+
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.THALLIUM_SHARD.get(), 9)
                 .requires(ModBlocks.THALLIUM_BLOCK)
@@ -55,8 +101,9 @@ public class ModRecipeProviders extends RecipeProvider implements IConditionBuil
 
         oreSmelting(recipeOutput, THALLIUM_SMELTABLES, RecipeCategory.MISC, ModItems.THALLIUM_SHARD.get(), 0.25f, 200, "thallium");
         oreBlasting(recipeOutput, THALLIUM_SMELTABLES, RecipeCategory.MISC, ModItems.THALLIUM_SHARD.get(), 0.25f, 100, "thallium");
-        oreSmelting(recipeOutput, IRONDUST_SMELTABLES, RecipeCategory.MISC, Items.IRON_INGOT, 0.25f, 200, "iron");
-        oreBlasting(recipeOutput, IRONDUST_SMELTABLES, RecipeCategory.MISC, Items.IRON_INGOT, 0.25f, 100, "iron");
+        oreSmelting(recipeOutput, IRONDUST_SMELTABLES, RecipeCategory.MISC, Items.IRON_INGOT, 0.25f, 200, "iron_ingot");
+        oreBlasting(recipeOutput, IRONDUST_SMELTABLES, RecipeCategory.MISC, Items.IRON_INGOT, 0.25f, 100, "iron_ingot");
+
 
 
     }
